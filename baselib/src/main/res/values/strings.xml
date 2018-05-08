@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">base</string>
+    <string name="loading">加载中...</string>
+    <string name="isBottom">已加载到底部</string>
+</resources>

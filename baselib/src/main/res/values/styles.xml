@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!--&lt;!&ndash; Base application theme. &ndash;&gt;-->
+    <!--<style name="AppTheme" parent="AppTheme.Base">-->
+    <!--&lt;!&ndash; 使用 API Level 22 編譯的話，要拿掉前綴字 &ndash;&gt;-->
+    <!--<item name="windowNoTitle">true</item>-->
+    <!--</style>-->
+
+    <!--<style name="AppTheme.Base" parent="Theme.AppCompat">-->
+    <!--&lt;!&ndash;底色&ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/color_red</item>-->
+    <!--&lt;!&ndash;状态栏底色&ndash;&gt;-->
+    <!--<item name="colorPrimaryDark">@color/color_red</item>-->
+    <!--<item name="colorAccent">@color/color_blue</item>-->
+    <!--<item name="android:windowBackground">@color/color_white</item>-->
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--</style>-->
+</resources>

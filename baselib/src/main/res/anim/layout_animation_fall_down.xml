@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animation="@anim/item_animation_fall_down"
+    android:animationOrder="normal"
+    android:delay="15%" />
+    <!--定义item运行的动画（资源）。-->
+    <!--动画顺序 Normal是按照布局的自然顺序（ vertical: top to bottom, horizontal: left to right），Reverse跟Normal是相反的，Random则按照随即的顺序-->
+    <!--为每个item动画添加一个延时-->
