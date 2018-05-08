@@ -1,7 +1,7 @@
 # BaseJava
 java底层封装（本着能使开发android项目更简单、方便）
 
- [推荐kotlin项目使用java项目底层](https://github.com/love-yanyi/BaseKotlin)
+ [推荐kotlin项目使用kotlin项目底层](https://github.com/love-yanyi/BaseKotlin)
 
 <br/>
 

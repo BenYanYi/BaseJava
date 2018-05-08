@@ -39,6 +39,7 @@ public abstract class BaseFragment extends Fragment {
         mContext = getActivity();
         mActivity = getActivity();
         unbinder = ButterKnife.bind(this, mView);
+        init();
         if (!isVisibleHidden()) {
             visibleInit();
         }
