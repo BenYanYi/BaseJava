@@ -9,7 +9,7 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 #### module 下添加
 
-     compile 'com.github.BenYanYi:BaseJava:1.0.1'
+     compile 'com.github.BenYanYi:BaseJava:1.0.2'
 
  #### project 下添加
 
