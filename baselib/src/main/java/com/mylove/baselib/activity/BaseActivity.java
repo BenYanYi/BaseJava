@@ -61,6 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     actionBar.setDisplayHomeAsUpEnabled(true);
                 }
             }
+            getSupportActionBar().setTitle("");
         }
         ButterKnife.bind(this);
         init();

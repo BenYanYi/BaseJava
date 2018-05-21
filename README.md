@@ -9,7 +9,7 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 #### module 下添加
 
-     compile 'com.github.BenYanYi:BaseJava:1.0.2'
+     compile 'com.github.BenYanYi:BaseJava:1.0.3'
 
  #### project 下添加
 
@@ -46,6 +46,7 @@ java底层封装（本着能使开发android项目更简单、方便）
 * 2018/4/27更新 优化一些细节
 * 2018/4/28更新 添加activity是否需要双击退出判断,更改设置布局的方式，添加页面布局中需要设置为layoutID，添加状态栏工具类StatusBarUtil
 * 2018/05/08更新 正式提交开源
+* 2018/05/21更新 完善部分细节
 * ........
 
 <br/>
@@ -54,4 +55,4 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 QQ：1541612424
 
-email： work@yanyi.red
+email： ben@yanyi.red
