@@ -31,7 +31,6 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 #### 介绍
 
-* 由于使用了butterknife，所以还需要自己引用butterknife
 * 普通的activity继承BaseActivity
 * 普通的fragment继承BaseFragment
 * 提供网络请求方法OkHttpUtil
