@@ -1,5 +1,5 @@
 # BaseJava
-java底层封装（本着能使开发android项目更简单、方便）
+java底层封装（本着能使开发android项目更简单、方便原则进行封装）[老版本(已停止维护)](https://github.com/BenYanYi/javalib)
 
  [推荐kotlin项目使用kotlin项目底层](https://github.com/love-yanyi/BaseKotlin)
 
