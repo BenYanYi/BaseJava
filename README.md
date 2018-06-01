@@ -9,7 +9,9 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 #### module 下添加
 
-     compile 'com.github.BenYanYi:BaseJava:1.0.2'
+     implementation 'com.github.BenYanYi:BaseJava:1.0.3'
+     implementation 'com.jakewharton:butterknife:8.8.1'
+     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
  #### project 下添加
 
@@ -21,6 +23,11 @@ java底层封装（本着能使开发android项目更简单、方便）
             }
         }
     }
+
+#### 感谢
+
+[glide](https://github.com/bumptech/glide),[gson](https://github.com/google/gson),[butterknife](https://github.com/JakeWharton/butterknife)
+感谢以上开源库提供使用
 
 #### 介绍
 
@@ -46,12 +53,11 @@ java底层封装（本着能使开发android项目更简单、方便）
 * 2018/4/27更新 优化一些细节
 * 2018/4/28更新 添加activity是否需要双击退出判断,更改设置布局的方式，添加页面布局中需要设置为layoutID，添加状态栏工具类StatusBarUtil
 * 2018/05/08更新 正式提交开源
+* 2018/06/01更新 优化一些细节
 * ........
 
 <br/>
-
-作者：演绎
-
-QQ：1541612424
-
+若在使用过程中出现什么问题，可以联系作者<br/>
+作者：演绎<br/>
+QQ：1541612424<br/>
 email： work@yanyi.red
