@@ -9,9 +9,9 @@ java底层封装（本着能使开发android项目更简单、方便）
 
 #### module 下添加
 
-     implementation 'com.github.BenYanYi:BaseJava:1.0.3'
-     implementation 'com.jakewharton:butterknife:8.8.1'
-     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+     implementation 'com.github.BenYanYi:BaseJava:1.0.4'
+     implementation 'com.jakewharton:butterknife:+'
+     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
 
  #### project 下添加
 
