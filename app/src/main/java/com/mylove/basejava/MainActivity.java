@@ -1,13 +1,10 @@
 package com.mylove.basejava;
 
 import com.mylove.baselib.activity.permission.BasePermissionsActivity;
-import com.mylove.baselib.activity.permission.PermissionType;
+import com.yanyi.permissionlib.PermissionType;
 
 /**
  * @author myLove
- * @date 2018-05-08 15:04
- * @e-mail love@yanyi.red
- * @overview
  */
 public class MainActivity extends BasePermissionsActivity {
     @Override
@@ -16,7 +13,7 @@ public class MainActivity extends BasePermissionsActivity {
     }
 
     @Override
-    protected void setDate() {
+    protected void allPermissionSuccess() {
 
     }
 
