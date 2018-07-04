@@ -9,11 +9,15 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 
 #### module 下添加
 
-     implementation 'com.github.BenYanYi:BaseJava:1.0.4'
      implementation 'com.jakewharton:butterknife:+'
      annotationProcessor 'com.jakewharton:butterknife-compiler:+'
+     
+     implementation 'com.yanyi.benyanyi:androidjava:1.0.2'
+     或者
+     implementation 'com.github.BenYanYi:BaseJava:1.0.4'
+      推荐使用上面那种，第二种今后将停止更新维护
 
- #### project 下添加
+ #### 使用第二种方法需在project 下添加
 
     allprojects {
         repositories {
@@ -49,10 +53,12 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/04/16更新 优化viewpager中使用带下拉刷新上拉加载的fragment是否在显示当前页面时请求数据，优化RecyclerView的请求动画，
                   在下拉基类中可以通过设置animationID来设置RecyclerView的动画，添加动画工具类RecyclerViewAnimation，使用时
                   不设置animationID则会使用默认的RecyclerView动画。
-* 2018/4/27更新 优化一些细节
-* 2018/4/28更新 添加activity是否需要双击退出判断,更改设置布局的方式，添加页面布局中需要设置为layoutID，添加状态栏工具类StatusBarUtil
+* 2018/04/27更新 优化一些细节
+* 2018/04/28更新 添加activity是否需要双击退出判断,更改设置布局的方式，添加页面布局中需要设置为layoutID，添加状态栏工具类StatusBarUtil
 * 2018/05/08更新 正式提交开源
 * 2018/06/01更新 优化一些细节
+* 2018/06/10更新 变更开源库地址
+* 2018/07/04更新 添加自定义单选框(CheckBox)SmoothCheckBox
 * ........
 
 <br/>

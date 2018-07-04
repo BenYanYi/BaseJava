@@ -16,4 +16,18 @@
         <attr name="VSleepTime" format="integer" />
         <attr name="VIsCusDuration" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="SmoothCheckBox">
+        <!-- 动画持续时间 -->
+        <attr name="BenDuration" format="integer" />
+        <!-- 边框宽度 -->
+        <attr name="BenStrikeWidth" format="dimension|reference" />
+        <!-- 边框颜色 -->
+        <attr name="BenBorderColor" format="color|reference" />
+        <!-- 选中状态的颜色 -->
+        <attr name="BenTrimColor" format="color|reference" />
+        <!-- 对勾颜色 -->
+        <attr name="BenTickColor" format="color|reference" />
+        <!-- 对勾宽度 -->
+        <attr name="BenTickWidth" format="dimension|reference" />
+    </declare-styleable>
 </resources>
