@@ -11,7 +11,7 @@ import com.mylove.baselib.adapter.CommonRecyclerAdapter;
 import java.util.List;
 
 /**
- * @author myLove
+ * @author yanyi
  * RecyclerView动画
  */
 public class RecyclerViewAnimation {

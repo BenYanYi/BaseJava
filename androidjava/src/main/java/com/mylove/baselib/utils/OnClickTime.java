@@ -1,7 +1,7 @@
 package com.mylove.baselib.utils;
 
 /**
- * @author myLove
+ * @author yanyi
  * 用于判断是否点击两次
  */
 

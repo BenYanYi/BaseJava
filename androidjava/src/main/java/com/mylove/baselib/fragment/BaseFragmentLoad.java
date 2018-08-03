@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public abstract class BaseFragmentLoad<T> extends BaseFragment implements onOkHttpListener {

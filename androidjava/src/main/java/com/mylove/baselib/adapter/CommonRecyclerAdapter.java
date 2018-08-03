@@ -12,7 +12,7 @@ import com.mylove.baselib.viewholder.RecyclerHolder;
 import java.util.List;
 
 /**
- * @author LYjw
+ * @author yanyi
  */
 
 public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<RecyclerHolder> {

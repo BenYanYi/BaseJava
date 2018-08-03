@@ -7,7 +7,7 @@ import android.view.ViewConfiguration;
 import android.widget.ScrollView;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class ScrollForRecycler extends ScrollView {

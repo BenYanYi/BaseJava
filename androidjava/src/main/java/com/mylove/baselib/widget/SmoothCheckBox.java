@@ -22,7 +22,7 @@ import android.view.animation.LinearInterpolator;
 import com.mylove.baselib.R;
 
 /**
- * @author myLove
+ * @author yanyi
  * 自定义圆形CheckBox
  * 动画持续时间  BenDuration
  * 边框宽度    BenStrikeWidth

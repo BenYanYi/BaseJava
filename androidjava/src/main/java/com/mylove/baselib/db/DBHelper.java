@@ -9,7 +9,7 @@ import com.mylove.loglib.JLog;
 import java.util.Map;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 class DBHelper extends SQLiteOpenHelper {

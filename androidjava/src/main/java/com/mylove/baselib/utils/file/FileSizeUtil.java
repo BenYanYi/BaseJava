@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.text.DecimalFormat;
 
 /**
- * Created by LYjw on 2017/3/2 0002.
+ * @author yanyi
  */
 
 public class FileSizeUtil {

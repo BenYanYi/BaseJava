@@ -3,7 +3,7 @@ package com.mylove.baselib.utils;
 import java.util.Arrays;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class ArrayUtil {

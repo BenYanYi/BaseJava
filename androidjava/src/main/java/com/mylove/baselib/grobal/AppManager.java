@@ -7,7 +7,7 @@ import android.content.Context;
 import java.util.Stack;
 
 /**
- * @author myLove
+ * @author yanyi
  * 应用程序Activity管理类：用于Activity管理和应用程序退出
  */
 

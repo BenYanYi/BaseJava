@@ -8,7 +8,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
 /**
- * @author myLove
+ * @author yanyi
  * 网络工具类
  */
 

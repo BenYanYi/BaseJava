@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class DateUtil {

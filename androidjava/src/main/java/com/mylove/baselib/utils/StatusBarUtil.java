@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * @author myLove
+ * @author yanyi
  * 管理手机状态栏
  */
 public class StatusBarUtil {

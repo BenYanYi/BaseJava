@@ -1,7 +1,7 @@
 package com.mylove.baselib.utils;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class StringsUtil {

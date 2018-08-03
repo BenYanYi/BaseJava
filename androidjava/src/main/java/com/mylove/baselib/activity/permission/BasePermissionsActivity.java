@@ -9,13 +9,18 @@ import com.yanyi.permissionlib.PermissionHelper;
 
 
 /**
- * @author myLove
- * 获取权限activity
+ * @author yanyi
+ * get permissions activity
  */
 
 public abstract class BasePermissionsActivity extends BaseActivity {
     private PermissionHelper permissionHelper;
 
+    /**
+     * permission to get
+     *
+     * @return permissions
+     */
     protected abstract String[] setPermissions();
 
     @Override
@@ -35,12 +40,23 @@ public abstract class BasePermissionsActivity extends BaseActivity {
         });
     }
 
+    /**
+     * get permissions success
+     */
     protected abstract void allPermissionSuccess();
 
+    /**
+     * get permissions failure
+     */
     public void allPermissionFailure() {
         finish();
     }
 
+    /**
+     * prompt popup when getting permission
+     *
+     * @return null
+     */
     public PermissionDialogInfo setDialogInfo() {
         return null;
     }

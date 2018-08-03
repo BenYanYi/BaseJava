@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author myLove
+ * @author yanyi
  * sqlite工具类
  */
 

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.GridLayoutAnimationController;
 
 /**
- * @author myLove
+ * @author yanyi
  * 解决RecyclerView设置成grid的情况下添加动画问题
  */
 

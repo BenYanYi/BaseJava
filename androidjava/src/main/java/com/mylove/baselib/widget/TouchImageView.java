@@ -12,7 +12,7 @@ import android.view.ScaleGestureDetector;
 import android.widget.ImageView;
 
 /**
- * @author myLove
+ * @author yanyi
  * 图片手势旋转与缩放
  */
 

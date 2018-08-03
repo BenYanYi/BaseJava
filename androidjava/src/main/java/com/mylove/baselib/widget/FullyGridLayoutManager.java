@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * @author myLove
+ * @author yanyi
  * 重写GridLayoutManager，解决gird样式下的recyclerView与scrollView的冲突
  */
 

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHttpListener {
@@ -34,19 +34,19 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     public List<T> oList = new ArrayList<>();
     public Handler handler = new Handler();
     /**
-     * 下拉刷新的标识
+     * Pull down refresh identifier
      */
     public int REFRESH = 0;
     /**
-     * 上拉加载更多的标识
+     * Pull up to load more tags
      */
     public int LOAD = 1;
     /**
-     * 判断是否没有数据可加载
+     * Determine if there is data to load
      */
     private boolean boo = true;
     /**
-     * 每页加载的条数
+     * Number of pages loaded per page
      */
     public int pageSize = 10;
     public int page = 1;
@@ -70,14 +70,14 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 设置适配器
+     * set adapter in recyclerView
      */
     public void setAdapter() {
         if (setLayoutManager() == null) {
-            throw new NullPointerException("RecyclerView样式不能为空");
+            throw new NullPointerException("layoutManager cannot be null");
         }
         if (setItemLayout() == 0) {
-            throw new NullPointerException("adapter需要设置item布局");
+            throw new NullPointerException("Adapter needs to set the item layout");
         }
         oList.clear();
         commRecycler.setLayoutManager(setLayoutManager());
@@ -99,21 +99,24 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     protected abstract RecyclerView.LayoutManager setLayoutManager();
 
     /**
-     * 设置适配器
+     * adapter set the item layout
      */
     protected abstract int setItemLayout();
 
     /**
-     * item设置参数
+     * setting item
      */
     protected abstract void adapterConvert(RecyclerHolder mHolder, T item, int position, boolean isScrolling);
 
     /**
-     * 设置头部
+     * setting header
      */
     public void setHeader() {
     }
 
+    /**
+     * setting footer
+     */
     protected void setFooter() {
         View footer = LayoutInflater.from(mContext).inflate(R.layout.item_foot, commRecycler, false);
         footLinear = footer.findViewById(R.id.foot_linear);
@@ -123,11 +126,11 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 刷新以及加载更多
+     * Refresh and load more
      */
     private void refreshData() {
         dataInit();
-        //下拉刷新
+        //Pull down to refresh
         commSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -141,16 +144,14 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
         });
         commRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
             int lastVisibleItem = 0;
-            //在屏幕上可见的item数量
+            //The number of items visible on the screen
             private int visibleItemCount = 0;
-            //已经加载出来的Item的数量
+            //The number of items that have been loaded
             private int totalItemCount = 0;
-            //在屏幕可见的Item中的第一个
+            //The first item in the item visible on the screen
             private int firstVisibleItem = 0;
-//            //是否正在上拉数据
+//            //Is pulling data up
 //            private boolean loading = true;
-//            //主要用来存储上一个totalItemCount
-//            private int previousTotal = 0;
 
             private int viewSize = 0;
 
@@ -184,16 +185,16 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
             }
 
             /**
-             * 滚动停止后调用
+             * Called after scrolling stops
              */
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-//                //最后一个可见的item
+                //The last visible item
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition();
                 if (boo && lastVisibleItem + viewSize == oList.size()) {
-                    //显示加载中进度条
+                    //Show loading progress bar
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -207,7 +208,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 请求数据的方法
+     * Method of requesting data
      */
     protected abstract void loadResultData();
 
@@ -221,12 +222,15 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 刷新页面
+     * notify UI
      */
     public void notifyUi() {
         dataInit();
     }
 
+    /**
+     * clean adapter
+     */
     public void cleanAdapter() {
         oList.clear();
         notifyData(oList);
@@ -245,7 +249,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 状态改变
+     * State change
      */
     private void status() {
         if (StringUtil.isListNotEmpty(oList)) {
@@ -299,14 +303,14 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 数据处理
+     * data processing
      *
-     * @param json 网络数据
+     * @param json Network data
      */
     protected abstract void disposeResultData(String json);
 
     /**
-     * 是否显示RecyclerView动画
+     * is show recyclerView animation
      *
      * @return
      */
@@ -315,7 +319,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     /**
-     * 设置动画ID
+     * setting animation ID
      *
      * @param animationID
      */

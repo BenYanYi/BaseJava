@@ -3,7 +3,7 @@ package com.mylove.baselib.utils;
 import android.content.Context;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class DpAndPxUtil {

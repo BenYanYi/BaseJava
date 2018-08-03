@@ -1,7 +1,7 @@
 package com.mylove.baselib.utils.file;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public enum SizeType {

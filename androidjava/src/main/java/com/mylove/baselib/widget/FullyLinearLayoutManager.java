@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * @author myLove
+ * @author yanyi
  * 重写LinearLayoutManager, 解决水平样式recyclerView与scrollView的冲突
  */
 

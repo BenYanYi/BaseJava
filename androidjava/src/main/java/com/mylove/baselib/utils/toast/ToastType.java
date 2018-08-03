@@ -1,7 +1,7 @@
 package com.mylove.baselib.utils.toast;
 
 /**
- * @author myLove
+ * @author yanyi
  * 吐司常量
  */
 

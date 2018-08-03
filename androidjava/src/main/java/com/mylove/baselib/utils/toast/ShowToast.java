@@ -5,7 +5,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 /**
- * @author myLove
+ * @author yanyi
  * 吐司工具类
  */
 

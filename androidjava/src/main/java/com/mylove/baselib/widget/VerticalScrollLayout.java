@@ -13,7 +13,7 @@ import android.widget.ViewFlipper;
 import com.mylove.baselib.R;
 
 /**
- * @author myLove
+ * @author yanyi
  * 自动滚动布局
  */
 

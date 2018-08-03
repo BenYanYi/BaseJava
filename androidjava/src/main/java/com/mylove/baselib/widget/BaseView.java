@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 abstract class BaseView extends View {

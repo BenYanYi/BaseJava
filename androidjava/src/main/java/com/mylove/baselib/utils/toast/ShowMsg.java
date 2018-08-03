@@ -4,7 +4,7 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 /**
- * @author myLove
+ * @author yanyi
  * 吐司显示位置类
  */
 

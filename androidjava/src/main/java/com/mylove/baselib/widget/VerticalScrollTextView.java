@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
- * @author myLove
+ * @author yanyi
  * 竖直方向自动滚动文字
  */
 

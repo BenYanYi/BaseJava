@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.List;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class TabStripPagerAdapter extends FragmentPagerAdapter {

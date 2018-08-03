@@ -17,9 +17,8 @@ import com.mylove.baselib.listener.CommonListener;
 import java.util.Random;
 
 /**
+ * @author yanyi
  * 万能的RecyclerView的ViewHolder
- *
- * @author myLove
  */
 
 public class RecyclerHolder extends RecyclerView.ViewHolder {

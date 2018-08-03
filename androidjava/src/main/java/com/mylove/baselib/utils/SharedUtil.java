@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class SharedUtil {
@@ -24,11 +24,15 @@ public class SharedUtil {
     private static SharedUtil instance;
     private SharedPreferences sha;
     private SharedPreferences.Editor oEditor;
-    private String name;
+    private String name = "share";
     private Context mContext;
 
     private SharedUtil(String name, Context context) {
         this.name = name;
+        this.mContext = context;
+    }
+
+    private SharedUtil(Context context) {
         this.mContext = context;
     }
 
@@ -44,11 +48,23 @@ public class SharedUtil {
         return instance;
     }
 
+    public static SharedUtil getInstance(Context context) {
+        if (instance == null) {
+            synchronized (SharedUtil.class) {
+                if (instance == null) {
+                    instance = new SharedUtil(context);
+
+                }
+            }
+        }
+        return instance;
+    }
+
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key    保存的key值
-     * @param values 保存的values
+     * @param key    save key
+     * @param values save values
      */
     public void saveShaString(String key, String values) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -58,10 +74,10 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key    保存的key值
-     * @param values 保存的values
+     * @param key    save key
+     * @param values save values
      */
     public void saveShaBoolean(String key, boolean values) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -71,10 +87,10 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key    保存的key值
-     * @param values 保存的values
+     * @param key    save key
+     * @param values save values
      */
     public void saveShaInt(String key, int values) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -84,10 +100,10 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key    保存的key值
-     * @param values 保存的values
+     * @param key    save key
+     * @param values save values
      */
     public void saveShaLong(String key, long values) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -97,10 +113,10 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key    保存的key值
-     * @param values 保存的values
+     * @param key    save key
+     * @param values save values
      */
     public void saveShaFloat(String key, float values) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -110,10 +126,10 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key 保存的key值
-     * @param set 保存的数组
+     * @param key save key
+     * @param set save Set
      */
     public void saveShaSet(String key, Set<String> set) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -123,10 +139,11 @@ public class SharedUtil {
     }
 
     /**
-     * 数据保存本地
+     * save data to local
      *
-     * @param key  保存的key值
-     * @param list 保存的集合
+     * @param key  save key
+     * @param list save Set
+     * @param <T>  save type
      */
     public <T> void saveShaList(String key, List<T> list) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -134,15 +151,14 @@ public class SharedUtil {
         Gson gson = new Gson();
         String str = gson.toJson(list);
         oEditor.putString(key, str);
-//        oEditor.putStringSet(key, set);
         oEditor.apply();
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in Set(default new HashSet<String>())
      */
     public Set<String> getShaSet(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -151,10 +167,10 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in String(default "")
      */
     public String getShaString(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -162,11 +178,11 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key        corresponding key
+     * @param defaultStr default values
+     * @return data in String
      */
     public String getShaString(String key, String defaultStr) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -174,10 +190,10 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in Boolean (default false)
      */
     public boolean getShaBoolean(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -185,22 +201,22 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key        corresponding key
+     * @param defaultBoo default values
+     * @return data in Boolean
      */
-    public boolean getShaBoolean(String key, boolean defaultStr) {
+    public boolean getShaBoolean(String key, boolean defaultBoo) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sha.getBoolean(key, defaultStr);
+        return sha.getBoolean(key, defaultBoo);
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in int(default -1)
      */
     public int getShaInt(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -208,22 +224,22 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key        corresponding key
+     * @param defaultInt default values
+     * @return data in int
      */
-    public int getShaInt(String key, int defaultStr) {
+    public int getShaInt(String key, int defaultInt) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sha.getInt(key, defaultStr);
+        return sha.getInt(key, defaultInt);
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in float(default -1)
      */
     public float getShaFloat(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -231,22 +247,22 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key          corresponding key
+     * @param defaultFloat default values
+     * @return data in float
      */
-    public float getShaFloat(String key, float defaultStr) {
+    public float getShaFloat(String key, float defaultFloat) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sha.getFloat(key, defaultStr);
+        return sha.getFloat(key, defaultFloat);
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in long(default -1)
      */
     public long getShaLong(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -254,22 +270,23 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key         corresponding key
+     * @param defaultLong default values
+     * @return data in float
      */
-    public long getShaLong(String key, long defaultStr) {
+    public long getShaLong(String key, long defaultLong) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sha.getLong(key, defaultStr);
+        return sha.getLong(key, defaultLong);
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key corresponding key
+     * @return data in List(default null ArrayList)
+     * not recommended for use
      */
     @Deprecated
     public <T> List<T> getShaList(String key) {
@@ -286,10 +303,11 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key    corresponding key
+     * @param tClass type
+     * @return data in List(default null ArrayList)
      */
     public <T> List<T> getShaList(String key, Class<T> tClass) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
@@ -311,14 +329,15 @@ public class SharedUtil {
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key        保存的key值
-     * @param defaultStr 取值失败返回的值
-     * @return 值
+     * @param key         corresponding key
+     * @param defaultList default values
+     * @return data in List
+     * not recommended for use
      */
     @Deprecated
-    public <T> List<T> getShaList(String key, List<T> defaultStr) {
+    public <T> List<T> getShaList(String key, List<T> defaultList) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
         String str = sha.getString(key, "");
         if (StringUtil.isNotEmpty(str)) {
@@ -327,15 +346,17 @@ public class SharedUtil {
             }.getType();
             return gson.fromJson(str, type);
         } else {
-            return defaultStr;
+            return defaultList;
         }
     }
 
     /**
-     * 从本地获取数据
+     * get data locally
      *
-     * @param key 保存的key值
-     * @return 值
+     * @param key         corresponding key
+     * @param tClass      type
+     * @param defaultList default values
+     * @return data in List
      */
     public <T> List<T> getShaList(String key, Class<T> tClass, List<T> defaultList) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);

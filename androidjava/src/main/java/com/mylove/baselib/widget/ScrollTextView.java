@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 
 /**
- * @author myLove
+ * @author yanyi
  * 横向自动滚动的文字
  */
 

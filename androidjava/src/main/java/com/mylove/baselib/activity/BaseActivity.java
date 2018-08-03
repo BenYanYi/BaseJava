@@ -25,7 +25,7 @@ import com.mylove.baselib.utils.toast.ShowToast;
 import butterknife.ButterKnife;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
@@ -50,11 +50,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         if (mToolbar != null) {
             setSupportActionBar(mToolbar);
-            //设置是否有返回箭头
-            if (callback()) {
+            if (canBack()) {
                 ActionBar actionBar = getSupportActionBar();
                 if (actionBar != null) {
-                    //设置ActionBar一个返回箭头，主界面没有，次级界面有
                     actionBar.setDisplayHomeAsUpEnabled(true);
                 }
             }
@@ -65,23 +63,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 设置页面
+     * set layoutID
      *
-     * @return 页面
+     * @return layoutID
      */
     protected abstract int setLayoutID();
 
     /**
-     * 逻辑代码
+     * Logic code
      */
     protected abstract void init();
 
     /**
-     * 是否需要返回键
+     * Whether to return
      *
-     * @return false
+     * @return default false
      */
-    public boolean callback() {
+    public boolean canBack() {
         return false;
     }
 
@@ -94,7 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 关闭软键盘
+     * Close the soft keyboard
      */
     public void hintKbTwo() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -106,9 +104,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 页面跳转
+     * start Activity
      *
-     * @param cls 需要跳转的页面
+     * @param cls page that needs to jump
      */
     public void startAct(Class cls) {
         Intent intent = new Intent(mContext, cls);
@@ -116,10 +114,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 页面跳转
+     * start Activity
      *
-     * @param cls    需要跳转的页面
-     * @param bundle 传递的参数
+     * @param cls    page that needs to jump
+     * @param bundle bundle
      */
     public void startAct(Class cls, Bundle bundle) {
         Intent intent = new Intent(mContext, cls);
@@ -130,10 +128,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 带返回的跳转页面
+     * start Activity
      *
-     * @param cls         需要跳转的页面
-     * @param requestCode 请求的下标
+     * @param cls         page that needs to jump
+     * @param requestCode requestCode
      */
     public void startAct(Class cls, int requestCode) {
         Intent intent = new Intent(mContext, cls);
@@ -141,11 +139,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 带返回的跳转页面
+     * start Activity
      *
-     * @param cls         需要跳转的页面
-     * @param bundle      传递的参数
-     * @param requestCode 请求的下标
+     * @param cls         page that needs to jump
+     * @param bundle      bundle
+     * @param requestCode requestCode
      */
     public void startAct(Class cls, Bundle bundle, int requestCode) {
         Intent intent = new Intent(mContext, cls);
@@ -164,21 +162,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 是否双击退出应用
+     * Whether to quit the software
      *
-     * @return 默认false
+     * @return default false
      */
     public boolean isExit() {
         return false;
     }
 
     /**
-     * 标记是否退出
+     * Whether to quit the software
      */
     private boolean isExit;
 
     /**
-     * 重写onKeyDown方法
+     * rewrite onKeyDown
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -191,7 +189,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 退出方法
+     * exit method
      */
     private void exit() {
         if (!isExit) {

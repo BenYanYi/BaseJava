@@ -3,7 +3,7 @@ package com.mylove.baselib.utils;
 import android.graphics.Bitmap;
 
 /**
- * @author myLove
+ * @author yanyi
  */
 
 public class ImageUtil {
