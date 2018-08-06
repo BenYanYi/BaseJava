@@ -12,7 +12,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
      implementation 'com.jakewharton:butterknife:+'
      annotationProcessor 'com.jakewharton:butterknife-compiler:+'
      
-     implementation 'com.yanyi.benyanyi:androidjava:1.0.2'
+     implementation 'com.yanyi.benyanyi:androidjava:1.0.4'
      或者
      implementation 'com.github.BenYanYi:BaseJava:1.0.4'
       推荐使用上面那种，第二种今后将停止更新维护

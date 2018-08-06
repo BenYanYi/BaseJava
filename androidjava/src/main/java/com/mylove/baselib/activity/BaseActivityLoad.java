@@ -156,7 +156,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
             private int viewSize = 0;
 
             /**
-             * 滚动中调用
+             * Called in scrolling
              */
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
