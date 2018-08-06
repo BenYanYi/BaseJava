@@ -158,7 +158,7 @@ public class SharedUtil {
      * get data locally
      *
      * @param key corresponding key
-     * @return data in Set(default new HashSet<String>())
+     * @return data in Set
      */
     public Set<String> getShaSet(String key) {
         sha = mContext.getSharedPreferences(name, Context.MODE_PRIVATE);
