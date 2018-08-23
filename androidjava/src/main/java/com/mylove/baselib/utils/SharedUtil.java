@@ -24,11 +24,11 @@ public class SharedUtil {
     private static SharedUtil instance;
     private SharedPreferences sha;
     private SharedPreferences.Editor oEditor;
-    private String name = "share";
+    public static String name = "share";
     private Context mContext;
 
-    private SharedUtil(String name, Context context) {
-        this.name = name;
+    private SharedUtil(String shaName, Context context) {
+        name = shaName;
         this.mContext = context;
     }
 
