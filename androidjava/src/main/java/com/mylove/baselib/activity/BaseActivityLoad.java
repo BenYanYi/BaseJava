@@ -285,8 +285,8 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     }
 
     @Override
-    public void onSuccess(String str) {
-        disposeResultData(str);
+    public <K> void onSuccess(K message) {
+        disposeResultData(message);
         status();
     }
 
@@ -305,9 +305,9 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     /**
      * data processing
      *
-     * @param json Network data
+     * @param message Network data
      */
-    protected abstract void disposeResultData(String json);
+    protected abstract <K> void disposeResultData(K message);
 
     /**
      * is show recyclerView animation

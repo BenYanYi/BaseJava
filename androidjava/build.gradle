@@ -38,7 +38,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0-rc01'
     api 'com.google.code.gson:gson:+'
     //okhttp
-    api 'com.yanyi.benyanyi:okhttplib:1.0.1'
+    api 'com.yanyi.benyanyi:okhttplib:1.0.3'
     //log
     api 'com.yanyi.benyanyi:loglib:1.0.0'
     api 'com.yanyi.benyanyi:permissionlib:1.0.1'

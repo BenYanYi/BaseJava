@@ -280,8 +280,8 @@ public abstract class BaseFragmentLoad<T> extends BaseFragment implements onOkHt
     }
 
     @Override
-    public void onSuccess(String str) {
-        disposeResultData(str);
+    public <K> void onSuccess(K message) {
+        disposeResultData(message);
         status();
     }
 
@@ -300,9 +300,9 @@ public abstract class BaseFragmentLoad<T> extends BaseFragment implements onOkHt
     /**
      * 数据处理
      *
-     * @param json 网络数据
+     * @param message 网络数据
      */
-    protected abstract void disposeResultData(String json);
+    protected abstract <K> void disposeResultData(K message);
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
