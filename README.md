@@ -12,7 +12,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
      implementation 'com.jakewharton:butterknife:+'
      annotationProcessor 'com.jakewharton:butterknife-compiler:+'
      
-     implementation 'com.yanyi.benyanyi:androidjava:1.0.6'
+     implementation 'com.yanyi.benyanyi:androidjava:1.0.8'
      或者
      implementation 'com.github.BenYanYi:BaseJava:1.0.4'
       推荐使用上面那种，第二种今后将停止更新维护
@@ -61,6 +61,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/07/04更新 添加自定义单选框(CheckBox)SmoothCheckBox
 * 2018/08/23更新 1.0.5去除时间选择器，将框架轻量化，添加轻量级存储工具类存储文件单独命名
 * 2018/08/24更新 升级网络请求工具方法
+* 2018/09/12更新 1.0.8优化在线下载方法
 * ........
 
 <br/>
