@@ -37,7 +37,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 
 * 普通的activity继承BaseActivity
 * 普通的fragment继承BaseFragment
-* 提供网络请求方法OkHttpUtil
+* 提供网络请求方法[OkHttpUtil](https://github.com/BenYanYi/OkHttp)
 * 里面提供了sqlite的封装类，使用时只需要调用DBUtil.getInstance(Context,tabName,dbName,fieldMap,version)，
       调用其中的增删查改方法，其中fieldMap是你要创建的表的表字段,其中的增删查改时出传入的map的key均应填写要均
       表示表字段，mMap的value表示插入的值，oMap的value表示条件的值,sMap的value表示更改后的值
