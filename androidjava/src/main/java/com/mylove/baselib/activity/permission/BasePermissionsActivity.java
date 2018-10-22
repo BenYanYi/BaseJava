@@ -1,6 +1,7 @@
 package com.mylove.baselib.activity.permission;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.mylove.baselib.activity.BaseActivity;
@@ -24,7 +25,7 @@ public abstract class BasePermissionsActivity extends BaseActivity {
     protected abstract String[] setPermissions();
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
         permissionHelper = new PermissionHelper(mActivity, setPermissions());
         permissionHelper.setDialogInfo(setDialogInfo());
         permissionHelper.hasPermission(new PermissionHelper.OnPermissionListener() {

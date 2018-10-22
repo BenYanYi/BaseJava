@@ -12,7 +12,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
      implementation 'com.jakewharton:butterknife:+'
      annotationProcessor 'com.jakewharton:butterknife-compiler:+'
      
-     implementation 'com.yanyi.benyanyi:androidjava:1.1.3'
+     implementation 'com.yanyi.benyanyi:androidjava:1.1.4'
      
 ### 方法二
 #### module 下添加
@@ -70,6 +70,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/09/14更新 1.1.1优化下载文件方法
 * 2018/09/28更新 1.1.2优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)
 * 2018/10/10更新 1.1.3优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)
+* 2018/10/22更新 1.1.4优化BaseActivity方法，添加退出当前应用时操作方法
 * ........
 
 <br/>

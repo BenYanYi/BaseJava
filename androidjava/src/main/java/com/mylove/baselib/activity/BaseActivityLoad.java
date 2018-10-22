@@ -1,5 +1,6 @@
 package com.mylove.baselib.activity;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -58,7 +59,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements onOkHt
     private int animationID = 0;
 
     @Override
-    protected void init() {
+    protected void init(Bundle savedInstanceState) {
         commRecycler = findViewById(R.id.recycler);
         commSwipe = findViewById(R.id.swipe_refresh);
         commSwipe.setColorSchemeColors(getResources().getColor(R.color.comm_blue),

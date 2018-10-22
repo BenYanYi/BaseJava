@@ -59,7 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("");
         }
         ButterKnife.bind(this);
-        init();
+        init(savedInstanceState);
     }
 
     /**
@@ -72,7 +72,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * Logic code
      */
-    protected abstract void init();
+    protected abstract void init(Bundle savedInstanceState);
 
     /**
      * Whether to return
@@ -90,6 +90,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     /**
      * Close the soft keyboard
@@ -197,6 +198,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             toast("再按一次退出程序");
             mHandler.sendEmptyMessageDelayed(0, 2000);
         } else {
+            appExit();
             AppManager.getInstance().AppExit(mContext);
         }
     }
@@ -209,4 +211,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             isExit = false;
         }
     };
+
+    public void appExit() {
+
+    }
 }
