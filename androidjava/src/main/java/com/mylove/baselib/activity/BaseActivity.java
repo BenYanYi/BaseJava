@@ -21,8 +21,7 @@ import com.google.gson.Gson;
 import com.mylove.baselib.R;
 import com.mylove.baselib.grobal.AppManager;
 import com.mylove.baselib.utils.toast.ShowToast;
-
-import butterknife.ButterKnife;
+import com.mylove.viewbind.ViewBind;
 
 /**
  * @author yanyi
@@ -58,7 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
             getSupportActionBar().setTitle("");
         }
-        ButterKnife.bind(this);
+        ViewBind.bind(this);
         init(savedInstanceState);
     }
 

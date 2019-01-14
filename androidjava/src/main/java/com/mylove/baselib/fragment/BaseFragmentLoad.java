@@ -15,7 +15,7 @@ import com.mylove.baselib.utils.StringUtil;
 import com.mylove.baselib.viewholder.RecyclerHolder;
 import com.mylove.baselib.widget.RecyclerViewAnimation;
 import com.mylove.loglib.JLog;
-import com.mylove.okhttp.onOkHttpListener;
+import com.mylove.okhttp.listener.OnOkHttpListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
  * @author yanyi
  */
 
-public abstract class BaseFragmentLoad<T> extends BaseFragment implements onOkHttpListener {
+public abstract class BaseFragmentLoad<T> extends BaseFragment implements OnOkHttpListener {
     public RecyclerView commRecycler;
     public SwipeRefreshLayout commSwipe;
     public LinearLayout footLinear;

@@ -70,6 +70,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/09/28更新 1.1.2优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)
 * 2018/10/10更新 1.1.3优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)
 * 2018/10/22更新 1.1.4优化BaseActivity方法，添加退出当前应用时操作方法
+* 2018/12/27更新 1.1.5优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)，更改注解框架[BindView](https://github.com/BenYanYi/BindViewLib)
 * ........
 
 <br/>
@@ -77,4 +78,4 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 作者：演绎<br/>
 QQ：1541612424<br/>
 email： work@yanyi.red<br/>
-微信公众号：benyanyi(演绎未来)&nbsp;&nbsp;&nbsp;将会不定期的更新android的一些文章
+微信公众号：benyanyi(演绎未来)&nbsp;&nbsp;&nbsp;将会不定期的更新关于android的一些文章

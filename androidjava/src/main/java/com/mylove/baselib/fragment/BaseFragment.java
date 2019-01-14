@@ -13,9 +13,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import com.mylove.baselib.utils.toast.ShowToast;
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import com.mylove.viewbind.ViewBind;
 
 /**
  * @author yanyi
@@ -25,7 +23,6 @@ public abstract class BaseFragment extends Fragment {
     public View mView;
     public Context mContext;
     public Activity mActivity;
-    Unbinder unbinder;
 
     @Nullable
     @Override
@@ -35,7 +32,7 @@ public abstract class BaseFragment extends Fragment {
         }
         mContext = getActivity();
         mActivity = getActivity();
-        unbinder = ButterKnife.bind(this, mView);
+        ViewBind.bind(mView, this);
         init();
         if (!isVisibleHidden()) {
             visibleInit();
@@ -151,11 +148,4 @@ public abstract class BaseFragment extends Fragment {
     public void onPause() {
         super.onPause();
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-
 }
