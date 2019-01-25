@@ -1,7 +1,7 @@
 # BaseJava
 java底层封装（本着能使开发android项目更简单、方便原则进行封装）[老版本(已停止维护)](https://github.com/BenYanYi/javalib)
 
- [推荐kotlin项目使用kotlin项目底层](https://github.com/love-yanyi/BaseKotlin)
+ [推荐kotlin项目使用kotlin项目底层](https://github.com/BenYanYi/BaseKotlin)
 
 <br/>
 
@@ -9,32 +9,11 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 ### 方法一
 #### module 下添加
 
-     implementation 'com.jakewharton:butterknife:+'
-     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
+     implementation 'com.yanyi.benyanyi:androidjava:1.1.6'
      
-     implementation 'com.yanyi.benyanyi:androidjava:1.1.4'
-     
-### 方法二(已停止更新维护)
-#### module 下添加
-
-     implementation 'com.jakewharton:butterknife:+'
-     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
-     implementation 'com.github.BenYanYi:BaseJava:1.0.4'
-
- #### 使用第二种方法需在project 下添加
-
-    allprojects {
-        repositories {
-            jcenter()
-            maven {
-                url 'https://jitpack.io'
-            }
-        }
-    }
-
 #### 感谢
 
-[glide](https://github.com/bumptech/glide),[gson](https://github.com/google/gson),[butterknife](https://github.com/JakeWharton/butterknife)
+[glide](https://github.com/bumptech/glide),[gson](https://github.com/google/gson)
 感谢以上开源库提供使用
 
 #### 介绍
@@ -71,6 +50,7 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/10/10更新 1.1.3优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)
 * 2018/10/22更新 1.1.4优化BaseActivity方法，添加退出当前应用时操作方法
 * 2018/12/27更新 1.1.5优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)，更改注解框架[BindView](https://github.com/BenYanYi/BindViewLib)
+* 2019/01/25更新 1.1.6更改注释框架，摒弃自定义控件，添加崩溃日志收集
 * ........
 
 <br/>

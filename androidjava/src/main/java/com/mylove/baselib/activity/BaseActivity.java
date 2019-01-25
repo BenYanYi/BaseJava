@@ -15,7 +15,6 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.mylove.baselib.R;
@@ -31,7 +30,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public Context mContext;
     public Activity mActivity;
     public Gson gson = new Gson();
-    public TextView rightTv;
     protected Toolbar mToolbar;
 
     @Override

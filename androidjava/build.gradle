@@ -41,7 +41,7 @@ dependencies {
     api 'com.yanyi.benyanyi:okhttplib:1.1.1'
     //log
     api 'com.yanyi.benyanyi:loglib:1.0.0'
-    api 'com.yanyi.benyanyi:permissionlib:1.0.1'
+    api 'com.yanyi.benyanyi:permissionlib:1.0.2'
     api 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     api 'com.yanyi.benyanyi:viewbind:1.0.0'
 }
