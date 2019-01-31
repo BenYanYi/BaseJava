@@ -59,6 +59,7 @@ public abstract class BaseFragmentLoad<T> extends BaseFragment implements OnOkHt
 
     @Override
     protected void init() {
+        initView();
         commRecycler = mView.findViewById(R.id.recycler);
         commSwipe = mView.findViewById(R.id.swipe_refresh);
         commSwipe.setColorSchemeColors(getResources().getColor(R.color.comm_blue),
@@ -67,6 +68,13 @@ public abstract class BaseFragmentLoad<T> extends BaseFragment implements OnOkHt
         setHeader();
         setFooter();
         refreshData();
+        initData();
+    }
+
+    protected void initView() {
+    }
+
+    protected void initData() {
     }
 
     public void setAdapter() {
