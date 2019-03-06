@@ -66,22 +66,22 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements OnOkHt
         commSwipe.setColorSchemeColors(getResources().getColor(R.color.comm_blue),
                 getResources().getColor(R.color.comm_green), getResources().getColor(R.color.comm_red));
         setAdapter();
-        setHeader();
+        setHeader(savedInstanceState);
         setFooter();
         refreshData();
-        initData();
+        initData(savedInstanceState);
     }
 
     protected void initView(Bundle savedInstanceState) {
     }
 
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
     }
 
     /**
      * set adapter in recyclerView
      */
-    public void setAdapter() {
+    private void setAdapter() {
         if (setLayoutManager() == null) {
             throw new NullPointerException("layoutManager cannot be null");
         }
@@ -120,7 +120,7 @@ public abstract class BaseActivityLoad<T> extends BaseActivity implements OnOkHt
     /**
      * setting header
      */
-    public void setHeader() {
+    public void setHeader(Bundle savedInstanceState) {
     }
 
     /**
