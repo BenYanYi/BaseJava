@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
+import com.mylove.baselib.utils.StringUtil;
 import com.mylove.baselib.utils.toast.ShowToast;
 import com.mylove.viewbind.ViewBind;
+import com.yanyi.permissionlib.PermissionDialogInfo;
+import com.yanyi.permissionlib.PermissionHelper;
 
 /**
  * @author yanyi
@@ -23,6 +26,8 @@ public abstract class BaseFragment extends Fragment {
     public View mView;
     public Context mContext;
     public Activity mActivity;
+
+    private PermissionHelper permissionHelper;
 
     @Nullable
     @Override
@@ -34,10 +39,52 @@ public abstract class BaseFragment extends Fragment {
         mActivity = getActivity();
         ViewBind.bind(mView, this);
         init();
+        if (StringUtil.isStringArrayNoEmpty(setPermissions())) {
+            permissionHelper = new PermissionHelper(mActivity, setPermissions());
+            permissionHelper.setDialogInfo(setDialogInfo());
+            permissionHelper.hasPermission(new PermissionHelper.OnPermissionListener() {
+                @Override
+                public void onAllPermissionSuccess() {
+                    allPermissionSuccess();
+                }
+
+                @Override
+                public void onAllPermissionFailure() {
+                    allPermissionFailure();
+                }
+            });
+        }
         if (!isVisibleHidden()) {
             visibleInit();
         }
         return mView;
+    }
+
+    public String[] setPermissions() {
+        return null;
+    }
+
+    /**
+     * prompt popup when getting permission
+     *
+     * @return null
+     */
+    public PermissionDialogInfo setDialogInfo() {
+        return null;
+    }
+
+    /**
+     * get permissions success
+     */
+    protected void allPermissionSuccess() {
+
+    }
+
+    /**
+     * get permissions failure
+     */
+    public void allPermissionFailure() {
+
     }
 
     protected abstract int setLayoutID();
@@ -52,6 +99,18 @@ public abstract class BaseFragment extends Fragment {
 
     public boolean isVisibleHidden() {
         return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        permissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        permissionHelper.onActivityResult(requestCode, resultCode, data);
     }
 
     /**

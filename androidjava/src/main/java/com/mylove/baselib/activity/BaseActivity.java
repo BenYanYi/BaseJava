@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +20,11 @@ import android.view.inputmethod.InputMethodManager;
 import com.google.gson.Gson;
 import com.mylove.baselib.R;
 import com.mylove.baselib.grobal.AppManager;
+import com.mylove.baselib.utils.StringUtil;
 import com.mylove.baselib.utils.toast.ShowToast;
 import com.mylove.viewbind.ViewBind;
+import com.yanyi.permissionlib.PermissionDialogInfo;
+import com.yanyi.permissionlib.PermissionHelper;
 
 /**
  * @author yanyi
@@ -31,6 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public Activity mActivity;
     public Gson gson = new Gson();
     protected Toolbar mToolbar;
+    private PermissionHelper permissionHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +62,48 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         ViewBind.bind(this);
         init(savedInstanceState);
+        if (StringUtil.isStringArrayNoEmpty(setPermissions())) {
+            permissionHelper = new PermissionHelper(mActivity, setPermissions());
+            permissionHelper.setDialogInfo(setDialogInfo());
+            permissionHelper.hasPermission(new PermissionHelper.OnPermissionListener() {
+                @Override
+                public void onAllPermissionSuccess() {
+                    allPermissionSuccess();
+                }
+
+                @Override
+                public void onAllPermissionFailure() {
+                    allPermissionFailure();
+                }
+            });
+        }
+    }
+
+    public String[] setPermissions() {
+        return null;
+    }
+
+    /**
+     * prompt popup when getting permission
+     *
+     * @return null
+     */
+    public PermissionDialogInfo setDialogInfo() {
+        return null;
+    }
+
+    /**
+     * get permissions success
+     */
+    protected void allPermissionSuccess() {
+
+    }
+
+    /**
+     * get permissions failure
+     */
+    public void allPermissionFailure() {
+
     }
 
     /**
@@ -70,6 +117,18 @@ public abstract class BaseActivity extends AppCompatActivity {
      * Logic code
      */
     protected abstract void init(Bundle savedInstanceState);
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        permissionHelper.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        permissionHelper.onActivityResult(requestCode, resultCode, data);
+    }
 
     /**
      * Whether to return

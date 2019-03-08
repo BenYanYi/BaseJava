@@ -130,6 +130,16 @@ public class StringUtil {
     }
 
     /**
+     * 判断string数组不为空
+     *
+     * @param array
+     * @return
+     */
+    public static boolean isStringArrayNoEmpty(String[] array) {
+        return array != null && array.length > 0;
+    }
+
+    /**
      * 判断long数组不为空
      *
      * @param array
