@@ -6,10 +6,9 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 <br/>
 
 ## 使用方法
-### 方法一
 #### module 下添加
 
-     implementation 'com.yanyi.benyanyi:androidjava:1.1.6'
+     implementation 'com.yanyi.benyanyi:androidjava:1.1.7'
      
 #### 感谢
 
@@ -51,6 +50,8 @@ java底层封装（本着能使开发android项目更简单、方便原则进行
 * 2018/10/22更新 1.1.4优化BaseActivity方法，添加退出当前应用时操作方法
 * 2018/12/27更新 1.1.5优化网络请求方法，详情看[OkHttp](https://github.com/BenYanYi/OkHttp)，更改注解框架[BindView](https://github.com/BenYanYi/BindViewLib)
 * 2019/01/25更新 1.1.6更改注释框架，摒弃自定义控件，添加崩溃日志收集
+* 2019/01/31更新 1.1.7完善注释框架
+* 2019/03/22更新 1.1.8修改log版本，修改网络请求版本
 * ........
 
 <br/>

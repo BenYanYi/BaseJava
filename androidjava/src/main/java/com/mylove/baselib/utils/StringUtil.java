@@ -358,4 +358,20 @@ public class StringUtil {
         }
         return null;
     }
+    /**
+     * 使用java正则表达式去掉多余的.与0
+     *
+     * @param str
+     * @return
+     */
+    public static String subZeroAndDot(Object str) {
+        String s = str.toString();
+        if (isEmpty(s))
+            return "";
+        if (s.indexOf(".") > 0) {
+            s = s.replaceAll("0+?$", "");//去掉多余的0
+            s = s.replaceAll("[.]$", "");//如最后一位是.则去掉
+        }
+        return s;
+    }
 }
